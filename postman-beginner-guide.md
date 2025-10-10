@@ -61,7 +61,53 @@ JSON
     "Id": 1,
     "title" : "sunt aut facer repellat provident occaecati excepturi optio reprehenderit",
     "body": "quita et suscipit suscipit recusandea"
-} ```
+} 
+```
 
 - step 5: Understanding what happened 
 what you just did was amke a GET request to the server. the server received your request, processed it, and sent back a response containing dtat in JSON format, a structure most APIS used in exchanging information. 
+
+## 4. Working With POST Requests
+So far you have see how to send a simple get request, whcich is basically used to fetch data from an API using jsonplaceholder. But what if you want to send request instead? That's where POST request comes in.
+Here's how to it in postman
+
+### - Step 1
+Create a new request
+- Open postman and click +New Tab or New Request
+- Set the method to POST from the dropdown next to the URL bar.
+
+### - Step 2
+- Enter your endpoint (URl)
+- For practice, you can use this public test API
+``` https://jsonplaceholder.typicode.com.posts ```
+### - step 3
+- Go to the "body" tab
+- Select raw.
+- choose JSON from the dropdown that says Text
+- Now you can type or paste your data in JSON format. Example
+
+``` 
+{
+    "title":"postman beginner guide",
+    "body": Learning how to make POST requests",
+    "userId":1
+}
+``` 
+### Step 4 
+- Click "send"
+- postman will send your data to API, you should see a response like this 
+```
+{
+    "title": Postman Beginner Guide",
+    "body": "Learning how to make post requests",
+    "userId": 1,
+    " Id": 101
+}  
+```
+- The id is usually geberated by the server to show that your new data was created.
+
+### - Tip
+If your POST request doesnt go through, double check:
+- The method is set to POST not GET 
+- You have selected raw-JSON in the Body tab.
+- Your JSON data is properlly formated (postman highligh error in red).
