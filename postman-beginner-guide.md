@@ -65,6 +65,7 @@ JSON
 ```
 
 - step 5: Understanding what happened 
+
 what you just did was amke a GET request to the server. the server received your request, processed it, and sent back a response containing dtat in JSON format, a structure most APIS used in exchanging information. 
 
 ## 4. Working With POST Requests
@@ -111,3 +112,58 @@ If your POST request doesnt go through, double check:
 - The method is set to POST not GET 
 - You have selected raw-JSON in the Body tab.
 - Your JSON data is properlly formated (postman highligh error in red).
+## 6. PUT, PATCH and DELETE Requests
+So far you have learned how to use GET to retrieve data and POST to create data.
+But what happens when you need to update or delete something that already exist?
+Thats where DELETE, PUT and PATCH comes in.
+Let's break them down :
+
+### - PUT Request - Full update
+A put request is used to completely replace a resource in the server. Think of it like overwriting an enetire file. Basically new data replces old one.
+
+Example endpoint
+``` https://jsonplaceholder.typicode.com/posts/ 1 ```
+
+Steps
+1. Set method to PUT
+2. Use the url above. Note the (/1) at the end means we are updating the post with ID 1.
+3. Go to the body tab - select raw- choose JSON
+4. paste this sample data:
+```{
+    "Id": 1,
+    "title": "updated post title",
+    "body": "This is the updated conetent for post 1",
+    "userId": 1
+}
+```
+5. Click send 
+You will get a response showing the upsated data, confirming that your put request worked.
+
+- Tip : With put the server expects all field , even if only one changed , if you omit afield it might be replaced with null or default values.
+
+### PATCH Request - partial update 
+A patch request is used when you only want to update a specific fields of a resource.
+It is lighter and faster than PUT because it only changes what you send 
+Example endpoint:
+``` https://jsonplaceholder.typicode.com/posts/1```
+
+Steps:
+1. Set the method to PATCH
+2. In the Body tab, use this :
+``` {
+    "title": "only the title was updated"
+}
+```
+3. Hit send 
+You will see that only the title field changes. Th rest of the points stays the same.
+
+### DELETE Request- Removing a Resource
+Finally, the DELETE request is used to remvoea resource from the server 
+Example endpoint:
+``` https://jsonplaceholder.typicode.com/posts/1 ```
+Steps 
+1. Set the method to delete 
+2. paste the url above 
+3. click send 
+You should see an empty response ({}) or a confirmation message  depending on the API, meaning the deletion was sucessful 
+Note: Most real- world APIs require authentication (like an API key or token) to perform delete operations.
