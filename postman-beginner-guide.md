@@ -167,3 +167,29 @@ Steps
 3. click send 
 You should see an empty response ({}) or a confirmation message  depending on the API, meaning the deletion was sucessful 
 Note: Most real- world APIs require authentication (like an API key or token) to perform delete operations.
+
+## 7. Using Parameters
+When working with APIs , you will need to send extra information along with your request. For example to get data for a specific user or to filter results. That sis where parameter comes im
+There are two types of parameters in postman:
+- Path Parameters - this are part of the URL itself.
+- Query Parameters- these are added after (?) in the URL or modify the request
+Lets get through both
+
+### - Path parameters
+Path parametex are used when the API endpoint itself chnages depending on what you are trying to acess 
+Think of it like a navigating through folders , each path points to a specific resource.
+Example endpoint:
+``` https://jsonplaceholder.typicode.com/posts/1 ```
+
+Here, the 1 at the end is the path parameter, meaning you are asking for the post with ID 1.
+
+### steps
+1. set methods to GET
+2. paste the URL above int postman
+3. Click send.
+You will get a response showing only the post with the userID 1.
+Tip: path parameters usually represent IDs. Things like users/5 or comments/10
+
+### - Query Parameters 
+Query parameters lets you filter or sort data without chnaging the base URL 
+They are added after a (?)seperated by (&) if there are multiple.
