@@ -222,3 +222,11 @@ That is where headers and authentication tokens comes in
 Headers are like the metadata of an API request- extra infromation that helps the server understand what you are sending and how to handle it 
 
 some common examples:
+| Header|      Description | 
+|------------|--------------------------|
+| conyent-type| Tells the server hat kind of data you are sending (e.g application/json)   |
+| Authorization  | Used to send authentication tokens or API keys | 
+|Accept|Tells the server what kind of response format you are expecting. |
+
+In postman you can find the Headers tab next to the Body and Param.
+
