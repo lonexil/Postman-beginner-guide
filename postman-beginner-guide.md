@@ -193,3 +193,32 @@ Tip: path parameters usually represent IDs. Things like users/5 or comments/10
 ### - Query Parameters 
 Query parameters lets you filter or sort data without chnaging the base URL 
 They are added after a (?)seperated by (&) if there are multiple.
+
+Example endpoint :
+```https://jsonplaceholder.typicode.com/posts?userId=1 ```
+Here you are asking the API: "show me only the posts that belong to user 1."
+steps :
+1. set the method to get 
+2. use the url above
+3. Hit send 
+
+You will get all list of posts by user 1.
+You can also add query parameters directly to inside postman without typing them in the URL.
+
+- Go to the param tab
+- In the key field , type userId
+- In the value field, type 1.
+- Postman automatically adds ?userId=1 to your URL.
+
+Tip: Query parameters are super handy for searching , filtering, or customizing results. For example:
+- /products?category=shoes
+- /users?limit=5&sort=asc
+
+## 8. Headers and Authentication
+So far, you have beeen making requests freely to public APIs like JSONPLACEHOLDER, no sign-in, no keys, nothing. But in real world , most APIs need authenticaton to verify who you are before you can have acess.
+That is where headers and authentication tokens comes in 
+
+### What are Headers?
+Headers are like the metadata of an API request- extra infromation that helps the server understand what you are sending and how to handle it 
+
+some common examples:
