@@ -230,3 +230,51 @@ some common examples:
 
 In postman you can find the Headers tab next to the Body and Param.
 
+### Adding Headers in Postman
+Let's try adding a simple header manually:
+
+1. Go to postman and open any request (e.g GET https://jsonplaceholder.typicode.com/posts/1).
+2. Click on the Headers tab
+3. In the key field, type:
+
+``` content-type```
+
+4. In the Value field, type:
+
+``` application/json```
+
+5. Hit send 
+You wont see a big difference in this example since jsonplaceholder does not require authentication, but that is how most real life API expect structured communication.
+
+### What is Authentication ?
+Authentication simply means proving your identity before acessing restricted or private area.
+It's like showing your Id card to get into a bilding, in this case it's how the API know if you are allowed to be there.
+
+The most common mehtod are :
+
+- API keys
+- Bearer token (personal acess tokem)
+
+OAuth (used by platforms lke Google, Github , and Twitter)
+
+Example; Authenticating ith Github API
+Now lets look at a real example using Github's API.
+
+Github requires you to authenticate before acessing personal data like your repositories
+
+STEPS
+1. Go to Github- settings-developer settings- personal acess tokens
+2. create a new token with read;user and repo permissions
+3. copy token (keep private)
+4. In postman:
+- set your request to
+
+``` GET https://api.github.com/user```
+
+- Go to the Authentication tab
+- choose Bearer Token as the type
+- paste your Github token in the token field.
+5. click send 
+If done correctly, you will get a 200 OK response- with your Github profile details in the response body.
+
+Alays keep your token save. Never share with anybody!!!
