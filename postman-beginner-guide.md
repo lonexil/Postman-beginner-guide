@@ -278,3 +278,48 @@ STEPS
 If done correctly, you will get a 200 OK response- with your Github profile details in the response body.
 
 Alays keep your token save. Never share with anybody!!!
+
+## 9. Collections and Enviromental variables
+By now , you know how to make requests in postman. But as you start working with multiple APIs and endpoints , things can get messy. That's where collection and envirmental variables comes in handy.
+
+### Benefits
+- keep request organized by project or API.
+- Share request with teammates
+- Run multiple requests automatically with the collection runner.
+
+### steps to create a collection
+1. click New- collection
+2. Give your collection a name (e.g, "JSONplaceholder practice").
+3. Drag and drop requests into collections or create new ones directly inside it.
+4. Save after making changes
+
+Tip:
+Collections are greate for projects. For example , if you are testing a blog API, you could have a collection with GET posts, POST new posts, PUT updates, DELETE posts, etc.
+
+### Enviromental variables -Making values dynamic 
+Sometimes you use the same value repeatedly, like API keys, URLs, userId, etc. Instead of typing hem everytime, postman lets you create enviroment variables
+
+Example:
+- Base url : https://jsonplaceholde.typicode.com
+- API key : 123h45b
+Instead of typing them in full everytime you can just use
+
+``` {{base_url}}/posts/1```
+Postman will automatically replace {{base_url}} with https://jsonplaceholder.typicode.com
+
+### Steps in creating enviromental variables:
+1. Click the Enviroment tab on the left side
+2. click add (or create Enviroment)to make new enviroment 
+3. Give your enviroment a name e.g Local API Test.
+4. Add variable names and values.
+
+Example:
+|variable|         value|
+|---------------|---------------|
+|base_url| https://jsonplaceholder.typicode.com|
+|       |    |
+- you can add multiple variables for things like tokens, user IDs, etc.
+5. Once done , select your enviroment from the drop down at the top of postman to activate it.
+
+Tip:
+Once your enviroment is set up you can reference variables in your request using {{variable_name}}.
