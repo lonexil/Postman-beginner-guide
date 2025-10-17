@@ -323,3 +323,41 @@ Example:
 
 Tip:
 Once your enviroment is set up you can reference variables in your request using {{variable_name}}.
+
+## 10. Testing and Automation
+So far , you have learned how to make and organize requets in postman.
+But what if you want to automatically check that your API is working the way it should every single time?
+That is here tests and automatios comes i 
+Postman let you write smal scripts that run after each request, to validate the response or trigger a follow up action.
+### writing your first test
+Every equest in postman has a tests tab it is where you can write java script based checks.
+
+lets see an example:
+
+1. open any request (like a GET request to https://jsonplaceholde.typicode.com/posts/1).
+2. Go to the tests tab (right beside the Body tab)
+3.  paste this simple script 
+
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+ ```
+ 4. Click send
+ After the response loads. scroll down to test result section, you will see whether the test passed or failed.
+
+ Tip: you can add multiple tsts in one request to check different things. Like response time,content type, or specific JSON values.
+
+ ### Automating with collection runer 
+ If you have multiple requests saved in a collection, you can run them all automatically one after te other using collection runner.
+
+ Steps 
+ 1. Open your collection
+ 2. click the Run botton
+ 3. Choose the enviroment if any
+ 4. Click start Run
+ postman will execute each request in sequence, and show whic ones passed or failed based on your tests.
+
+ This is super useful in testing API before deployment ,or checking that changes didnt break anything ( a process known as regression testing)
+  
